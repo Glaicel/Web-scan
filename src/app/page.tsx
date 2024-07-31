@@ -12,7 +12,7 @@ export default function Home() {
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSignIn = async (e) => {
+  const handleSignIn = async (e: { preventDefault: () => void; }) => {
     setIsLoading(true)
     e.preventDefault()
     const { error } = await supabase.auth.signInWithPassword({
